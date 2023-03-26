@@ -1,0 +1,16 @@
+在Python中：
+#哈希表set(),set添加数据为 set.add()
+#数组添加为 nums.append()
+
+
+在JS中
+/* 知识点：
+const hash = new Set(); JS建立哈希表为
+hash.add();     哈希表添加数据用add
+
+与数组的区别：
+const nums = new Array();
+const list = [];
+数组判断是否含有某元素为
+array.indexOf(arg) (如果不存在返回-1)  ||  arr.indludes(arg)
+ */
