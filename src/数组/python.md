@@ -12,4 +12,5 @@
 ### 0412
 ##### 判断元素是否存在于数组中
 if i in nums:
-if nums.index(i)
+
+if nums.index(i)：
