@@ -1,7 +1,5 @@
-## 知识点
-
 ### 0330
-求两者之间值较大的数 max(a, b)
+##### 求两者之间值较大的数 max(a, b)
 
 排序 list.sort()
 
@@ -14,3 +12,10 @@
 if i in nums:
 
 if nums.index(i)：
+
+### 0505
+#####  二维数组排序
+二维数组按照数组中第二位大小排序
+arrSorted = sorted(arr, key=lambda x:x[1], reverse=False)   正序
+arrSorted = sorted(arr, key=lambda x:x[1], reverse=True)   逆序
+

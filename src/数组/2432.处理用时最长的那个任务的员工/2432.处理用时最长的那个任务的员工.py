@@ -1,4 +1,4 @@
-# 思路：
+# 思路： 遍历，枚举
 # 构造一个二维数组 timeUseArr 记录 logs[i] 以及 logs[i] 的用时
 # timeUseArr = [[logs[i], time_logs[i]]]
 # 将 timeUseArr 反向排序得到 timeUseArrSorted
@@ -25,12 +25,6 @@ def hardestWorker(n, logs):
     res = min(res)
 
     return res
-
-
-
-
-
-
 
 
 n = 26
