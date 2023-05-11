@@ -1,18 +1,21 @@
-def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
 
-def preorderTraversal(root):
-    res = []
-    def tran(root):
-        if root == None:
-            return
-        res.append(root.val)
-        tran(root.left)
-        tran(root.right)
-    tran(root)
-    return res
 
-root =[1,None,2,3]
-print(preorderTraversal(root))
+class Solution:
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        res = []  # 数组存储遍历结果
+
+        def tarversal(root):  # 构建递归函数,确定参数
+            if root == None: return  # 确定终止条件， 确定返回值
+            # 确当单层逻辑
+            res.append(root.val)
+            tarversal(root.left)
+            tarversal(root.right)
+
+        tarversal(root)
+        return res
