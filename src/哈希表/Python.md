@@ -1,5 +1,5 @@
 ###
-######
+###### 
 在Python中，可以使用字典（Dictionary）数据结构来构建哈希表。
 字典是一种无序的键值对集合，其中每个键对应一个值。键必须是唯一的，而值可以重复。
 ######
@@ -21,3 +21,20 @@ hash_map = {"key1": value1, "key2": value2, "key3": value3}
 ###### 
 排序： nums.sort()
 添加： nums.append()
+
+### 构建哈希表
+hashTable = {}
+### 查询哈希表中相同字符串的最大数目
+max(hashTable.values())
+### 哈希表计数
+if item not in hashTable:
+    hashTable[item] = 1
+else:
+    hashTable[item] += 1
+
+### for循环遍历矩阵
+for row in matrix:
+    for item in row:
+        ...
+### 列表 list 转字符串 str
+str = ''.
