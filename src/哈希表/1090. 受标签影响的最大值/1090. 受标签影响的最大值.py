@@ -1,3 +1,13 @@
+# 思路
+# 排序 + 哈希
+"""
+将values和label组成一个二维数组，并将内部数组按照values值从大到小排列
+建立一个哈希表存储访问values和labels的元素和次数，res表示最终结果初始值为0
+从左到右（从大到小）依次遍历二维数组，将values元素加入到hashTable中并记录次数，此时更新numWanted--，并更新res
+当hashTable中的值（即选择元素的标签个数） == useLimit时，表示该标签已达到最大个数，不做操作继续循环
+当遍历完成或者numWanted == 0时，跳出循环，返回res即为最终结果
+"""
+
 def largestValsFromLabels(values, labels, numWanted, useLimit):
     n = len(values)  # 数组长度
     coll = [0] * n  # 创建二维数组存储 values 和 labels
@@ -20,15 +30,5 @@ def largestValsFromLabels(values, labels, numWanted, useLimit):
                 res.append(coll_sorted[i][1])
                 numList[coll_sorted[i][0]] += 1
         i += 1
-
     return sum(res)
 
-
-values = [9, 8, 8, 7, 6]
-labels = [0, 0, 0, 1, 1]
-numWanted = 3
-useLimit = 1
-print(largestValsFromLabels(values, labels, numWanted, useLimit))
-
-arr = list(range(8))
-print(arr)
