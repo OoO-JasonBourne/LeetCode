@@ -21,3 +21,7 @@ var absoluteValue = Math.abs(-5); \
 var power = Math.pow(2, 3); \
 var sineValue = Math.sin(Math.PI / 2);
 
+## 三元表达式
+var value = condition ? x : y;
+
+
