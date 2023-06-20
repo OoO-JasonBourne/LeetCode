@@ -40,3 +40,8 @@ str = ''.
 
 ### 二维数组按照内部数组大小排序
 arr_sorted = sorted(arr, key=lambda x: x[1], reverse=True)  
+
+### 遍历哈希表的键和值
+#### 遍历键    for key in hashMap:
+#### 遍历值    for value in hashMap.values():
+#### 遍历键和值  for key,value in hashMap.items():
