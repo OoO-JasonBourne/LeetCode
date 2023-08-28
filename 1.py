@@ -1,2 +1,5 @@
-res = [[1],[2,3],[4,5]]
-print(res.reverse())
+a = 12345678.1234
+
+# print(f"{a:,}")
+
+print("{:,}".format(a))
