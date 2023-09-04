@@ -1,47 +1,28 @@
-# -*- coding: utf-8 -*-
-def openLock(deadends, target):
-    # 向上转
-    def turnOn(password, index, step):
-        if password[index] == '9':
-            newNum = '0'
+# 动态规划五部曲
+"""
+1.确定dp数组和下标含义
+2.确定递推公式
+3.初始化
+4.遍历顺序
+5举例
+"""
+def selectNotes(nums):
+    n = len(nums)
+    dp = [0 for i in range(n)]
+    dp_count = [1 for i in range(n)]
+    dp[0] = nums[0]
+    dp[1] = max(nums[0], nums[1])
+    for i in range(2, n):
+        dp[i] = max(dp[i - 1], dp[i - 2] + nums[i])
+        if dp[i - 1] < dp[i - 2] + nums[i]:
+            dp_count[i] = dp_count[i - 2] + 1
         else:
-            newNum = str(int(password[index]) + 1)
-        newPassword = password[:index] + newNum + password[index+1:]
-        return newPassword
-    # 向下转
-    def turnDown(password, index, step):
-        if password[index] == '0':
-            newNum = '9'
-        else:
-            newNum = str(int(password[index]) - 1)
-        return password[:index] + newNum + password[index+1:]
-    originPassword = '0000'
-    queue = [originPassword]
-    visited = {originPassword}
-    deadendsSet = set()
-    for deadend in deadends:
-        visited.add(deadend)
-    step = 0
-    while queue:
-        count = len(queue)
-        for i in range(count):
-            cur = queue.pop(0)
-            # if cur in deadendsSet:
-            #     continue
-            if cur == target:
-                return step
-            for j in range(4):
-                on = turnOn(cur, j, step)
-                down = turnDown(cur, j, step)
-                if on not in visited:
-                    queue.append(on)
-                    visited.add(on)
-                if down not in visited:
-                    queue.append(down)
-                    visited.add(down)
-        step += 1
-    return step
-deadends = ["0201","0101","0102","1212","2002"]
-target = "0102"
-print(openLock(deadends, target))
+            dp_count[i] = dp_count[i - 1]
 
+    return [dp[n - 1], dp_count[n - 1]]
+
+
+
+
+nums = [1, 2, 3, 1]
+print(selectNotes(nums))
