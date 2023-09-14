@@ -1,21 +1,56 @@
-const tests = [
-    {input: 33},
-    {input: 1234.56},
-    {input: 123456789},
-    {input: 987654.321},
-    {input: -987654.3},
-]
-
-function paddingNum(tests){
-    for(let test of tests){
-        const num = test["input"]
-        const formatNum = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-        test["output"] = formatNum
-    }
-    return tests
+var MyQueue = function(){
+    // 定义两个栈模拟队列
+    // 入栈-stack_in    出栈-stack_out
+    this.stack_in = Array()
+    this.stack_out = Array()
 }
 
-result = paddingNum(tests)
-console.log(result)
-// a = {input:33}
-// console.log(a["input"])
+MyQueue.prototype.push = function(x){
+    this.stack_in.push(x)
+};
+
+MyQueue.prototype.pop = function(){
+    if(this.stack_out.length){
+        return this.stack_out.pop()
+    }
+    while(this.stack_in.length){
+        const temp = this.stack_in.pop()
+        this.stack_out.push(temp)
+    }
+    return this.stack_out.pop()
+}
+
+MyQueue.prototype.peek = function(){
+    const temp = this.pop()
+    this.stack_out.push(temp)
+    return temp
+}
+
+MyQueue.prototype.empty = function(){
+    return not (this.stack_in.length or this.stack_out.length)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
