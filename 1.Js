@@ -27,20 +27,8 @@ MyQueue.prototype.peek = function(){
 }
 
 MyQueue.prototype.empty = function(){
-    return not (this.stack_in.length or this.stack_out.length)
+    return not (this.stack_in.length || this.stack_out.length)
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

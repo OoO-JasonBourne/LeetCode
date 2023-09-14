@@ -22,3 +22,4 @@ class MyQueue:
 
     def empty(self):
         return True if not stack_in and not stack_out else False
+
